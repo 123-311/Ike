@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f7f8f6;
+  --surface: #ffffff;
+  --foreground: #14231b;
+  --muted: #5b6b62;
+  --border: #e3e7e2;
+
+  /* Kenyan-green brand primary, warm accent for deals/discounts. */
+  --primary: #0c7a3d;
+  --primary-dark: #075c2c;
+  --primary-contrast: #ffffff;
+  --accent: #e8590c;
+  --accent-contrast: #ffffff;
+  --danger: #c62828;
+  --warning: #b7791f;
+  --success: #0c7a3d;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-primary-contrast: var(--primary-contrast);
+  --color-accent: var(--accent);
+  --color-accent-contrast: var(--accent-contrast);
+  --color-danger: var(--danger);
+  --color-warning: var(--warning);
+  --color-success: var(--success);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0c1210;
+    --surface: #131c18;
+    --foreground: #eef3ef;
+    --muted: #9db1a5;
+    --border: #24322b;
+  }
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+a {
+  color: inherit;
+}
