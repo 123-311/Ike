@@ -34,7 +34,7 @@ export default async function DealDetailPage({
   const isPublic =
     deal &&
     deal.status === "APPROVED" &&
-    deal.expiryDate.getTime() > Date.now() &&
+    deal.expiryDate > new Date() &&
     deal.business.verificationStatus === "APPROVED";
 
   if (!deal || (!isPublic && !isOwner && !isAdmin)) {

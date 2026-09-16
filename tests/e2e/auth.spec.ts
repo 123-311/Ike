@@ -1,5 +1,5 @@
 import { test, expect } from "@playwright/test";
-import { registerCustomer, loginAs, submitMainForm, unique, uniquePhone } from "./helpers";
+import { registerCustomer, loginAs, submitMainForm, uniquePhone } from "./helpers";
 
 test.describe("Authentication", () => {
   test("a visitor can register, is signed in, and can log out", async ({ page }) => {
@@ -10,7 +10,7 @@ test.describe("Authentication", () => {
 
     await page.locator('form:has-text("Log out") button[type="submit"]').click();
     await page.waitForURL("/", { timeout: 10_000 });
-    await expect(page.locator('a:has-text("Log in")')).toBeVisible();
+    await expect(page.locator('a:has-text("Log in")').first()).toBeVisible();
 
     // And can log back in with the same credentials.
     await loginAs(page, email, "StrongPass123");

@@ -38,7 +38,7 @@ export default async function SavedDealsPage() {
           {saved.map((s) => {
             const isAvailable =
               s.deal.status === "APPROVED" &&
-              s.deal.expiryDate.getTime() > Date.now() &&
+              s.deal.expiryDate > new Date() &&
               s.deal.business.verificationStatus === "APPROVED";
             return (
               <div
